@@ -1,59 +1,33 @@
-import subprocess
-import webbrowser
-import os
-
-
-WEBSITES = {
-    "google": "https://www.google.com",
-    "youtube": "https://www.youtube.com",
-    "github": "https://github.com",
-    "facebook": "https://facebook.com",
-    "instagram": "https://instagram.com",
-    "chatgpt": "https://chatgpt.com",
-    "linkedin": "https://linkedin.com",
-    "reddit": "https://reddit.com",
-}
+from automation.apps import open_app
+from automation.browser import open_website
+from automation.system import open_desktop, open_downloads
 
 
 def execute(command):
 
-    command = command.lower()
-
-    if command == "hello":
-        print("Hello Sarwar!")
-        return
-
-    if command == "how are you":
-        print("I'm doing great!")
-        return
-
-    if command == "open calculator":
-        subprocess.Popen("calc", shell=True)
-        return
-
-    if command == "open notepad":
-        subprocess.Popen("notepad", shell=True)
-        return
-
-    if command == "open chrome":
-        subprocess.Popen("start chrome", shell=True)
-        return
-
-    if command == "open downloads":
-        os.startfile(os.path.join(os.path.expanduser("~"), "Downloads"))
-        return
-
-    if command == "open desktop":
-        os.startfile(os.path.join(os.path.expanduser("~"), "Desktop"))
-        return
+    command = command.lower().strip()
 
     if command.startswith("open "):
 
-        website = command.replace("open ", "")
+        item = command[5:].strip()
 
-        if website in WEBSITES:
-            print(f"Opening {website}...")
-            webbrowser.open(WEBSITES[website])
+        if item == "desktop":
+            open_desktop()
             return
 
-    print("Sorry, I don't understand.")
+        if item == "downloads":
+            open_downloads()
+            return
+
+        if open_app(item):
+            print(f"Opening {item}...")
+            return
+
+        if open_website(item):
+            print(f"Opening {item}...")
+            return
+
+        print(f"'{item}' was not found.")
+        return
+
+    print("Unknown command.")
