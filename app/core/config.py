@@ -1,4 +1,4 @@
-ASSISTANT_NAME = "Jarvis"
+ASSISTANT_NAME = "Nexa"
 USER_NAME = "Sarwar"
 
 AI_MODEL = "ollama"

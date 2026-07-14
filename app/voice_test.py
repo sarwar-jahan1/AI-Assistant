@@ -1,10 +1,7 @@
-from voice.listener import Listener
+from voice.voice_input import VoiceInput
 
-listener = Listener()
+voice = VoiceInput()
 
-while True:
+command = voice.listen()
 
-    command = listener.listen()
-
-    if command == "exit":
-        break
+print("\nYou said:", command)

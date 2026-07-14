@@ -8,7 +8,7 @@ class CommandParser:
             "please ",
             "can you ",
             "could you ",
-            "jarvis ",
+            "nexa ",
         ]
 
         for prefix in prefixes:
