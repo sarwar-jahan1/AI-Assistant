@@ -35,7 +35,7 @@ A Local AI Desktop Assistant built with Python and Ollama.
 ## Installation
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Nexa-AI.git
+git clone https://github.com/YOUR_USERNAME/AI-Assistant.git
 
 cd Nexa-AI
 
@@ -68,4 +68,4 @@ pyinstaller --onefile --name Nexa app/main.py
 
 ## Author
 
-Sarwar
+Md.Sarwar
