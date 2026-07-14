@@ -1,4 +1,12 @@
-openai
+requests
 python-dotenv
 rich
-requests
+psutil
+pyautogui
+sounddevice
+soundfile
+numpy
+scipy
+faster-whisper
+edge-tts
+pygame

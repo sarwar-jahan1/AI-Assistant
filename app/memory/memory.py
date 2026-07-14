@@ -4,7 +4,7 @@ import sqlite3
 class Memory:
 
     def __init__(self):
-        self.connection = sqlite3.connect("jarvis.db")
+        self.connection = sqlite3.connect("nexa.db")
         self.cursor = self.connection.cursor()
 
     def save(self, key, value):

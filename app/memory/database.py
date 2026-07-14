@@ -1,6 +1,6 @@
 import sqlite3
 
-connection = sqlite3.connect("jarvis.db")
+connection = sqlite3.connect("nexa.db")
 cursor = connection.cursor()
 
 cursor.execute("""
